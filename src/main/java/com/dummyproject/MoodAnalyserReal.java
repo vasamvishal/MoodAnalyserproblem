@@ -17,7 +17,7 @@ public class MoodAnalyserReal {
         }
         catch(NullPointerException e)
         {
-            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_EMPTY,"Enter a  proper value");
+            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL,"Enter a  proper value");
         }
     }
 }

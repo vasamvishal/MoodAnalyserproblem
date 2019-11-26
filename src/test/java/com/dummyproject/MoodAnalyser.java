@@ -44,4 +44,16 @@ public class MoodAnalyser {
             e.printStackTrace();
         }
     }
+    @Test
+    public void shouldReturn_object_fromClass() {
+        MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
+        try {
+            String mood = moodobject.analyseMood();
+            Assert.assertEquals("HAPPY", mood);
+        } catch ( MoodAnalysisException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
