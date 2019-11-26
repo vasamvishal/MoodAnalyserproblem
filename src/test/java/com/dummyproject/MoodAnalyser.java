@@ -13,7 +13,7 @@ public class MoodAnalyser {
     @Test
 
     public void shouldReturn_HAPPY_ForHappyMesssage() {
-        MoodAnalyserReal moodAnalyser = new MoodAnalyserReal(null);
+        MoodAnalyserReal moodAnalyser = new MoodAnalyserReal("this is a happy message");
         String mood = moodAnalyser.analyseMood();
         Assert.assertEquals("HAPPY",mood);
     }
