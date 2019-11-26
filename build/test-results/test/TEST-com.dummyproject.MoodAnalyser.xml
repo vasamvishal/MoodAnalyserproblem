@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dummyproject.MoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-26T04:40:25" hostname="admin1-LIVA-Z2V" time="0.211">
+  <properties/>
+  <testcase name="shouldReturn_SAD_ForSADmessage" classname="com.dummyproject.MoodAnalyser" time="0.211"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
