@@ -46,11 +46,17 @@ public class MoodAnalyser {
     }
     @Test
     public void shouldReturn_object_fromClass() {
-        MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
         try {
+            MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
+
             String mood = moodobject.analyseMood();
             Assert.assertEquals("HAPPY", mood);
-        } catch ( MoodAnalysisException e) {
+        }
+        catch ( ClassNotFoundException e ) {
+            e.printStackTrace();
+        }
+
+        catch ( MoodAnalysisException e ) {
             e.printStackTrace();
         }
 
