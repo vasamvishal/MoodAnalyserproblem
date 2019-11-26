@@ -7,23 +7,40 @@ public class MoodAnalyser {
 
 
     @Test
-    public void shouldReturn_SAD_ForSADmessage() {
-        MoodAnalyserReal moodAnalyserReal = new MoodAnalyserReal("this is a sad message");
-        String mood = moodAnalyserReal.analyseMood();
-        Assert.assertEquals("SAD",mood);
+    public void shouldReturn_SAD_ForSADmessage() throws MoodAnalysisException {
+
+            MoodAnalyserReal moodAnalyserReal = new MoodAnalyserReal("this is a sad message");
+            String mood = moodAnalyserReal.analyseMood();
+            Assert.assertEquals("SAD", mood);
     }
     @Test
 
-    public void shouldReturn_HAPPY_ForHappyMesssage() {
+    public void shouldReturn_HAPPY_ForHappyMesssage() throws MoodAnalysisException {
         MoodAnalyserReal moodAnalyser = new MoodAnalyserReal("this is a happy message");
         String mood = moodAnalyser.analyseMood();
-        Assert.assertEquals("HAPPY",mood);
+        Assert.assertEquals("HAPPY", mood);
     }
     @Test
 
-    public void shouldReturn_Happy_forNull() {
-        MoodAnalyserReal moodAnalyserReal = new MoodAnalyserReal(null);
-        String mood = moodAnalyserReal.analyseMood();
-        Assert.assertEquals("HAPPY",mood);
+    public void shouldReturn_Happy_forNull()  {
+        try {
+            MoodAnalyserReal moodAnalyserReal = new MoodAnalyserReal(null);
+            String mood = moodAnalyserReal.analyseMood();
+            Assert.assertEquals("HAPPY", mood);
+        }
+        catch( MoodAnalysisException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void shouldReturn_customException_forNull(){
+        try {
+            MoodAnalyserReal moodAnalyserReal = new MoodAnalyserReal(null);
+            String mood = moodAnalyserReal.analyseMood();
+            Assert.assertEquals("Enter a proper value",mood);
+        }
+        catch( MoodAnalysisException e ) {
+            e.printStackTrace();
+        }
     }
 }
