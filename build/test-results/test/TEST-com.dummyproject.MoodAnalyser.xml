@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dummyproject.MoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-26T04:59:32" hostname="admin1-LIVA-Z2V" time="0.002">
+<testsuite name="com.dummyproject.MoodAnalyser" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-11-26T05:17:37" hostname="admin1-LIVA-Z2V" time="0.017">
   <properties/>
-  <testcase name="shouldReturn_SAD_ForSADmessage" classname="com.dummyproject.MoodAnalyser" time="0.002"/>
+  <testcase name="shouldReturn_HAPPY_ForHappyMesssage" classname="com.dummyproject.MoodAnalyser" time="0.004"/>
+  <testcase name="shouldReturn_SAD_ForSADmessage" classname="com.dummyproject.MoodAnalyser" time="0.0"/>
+  <testcase name="shouldReturn_Happy_forNull" classname="com.dummyproject.MoodAnalyser" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
