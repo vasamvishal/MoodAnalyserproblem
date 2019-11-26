@@ -34,12 +34,13 @@ public class MoodAnalyser {
     }
     @Test
     public void shouldReturn_customException_forNull(){
-        try {
+
             MoodAnalyserReal moodAnalyserReal = new MoodAnalyserReal(null);
-            String mood = moodAnalyserReal.analyseMood();
-            Assert.assertEquals("Enter a proper value",mood);
-        }
+            try {
+                 moodAnalyserReal.analyseMood();
+            }
         catch( MoodAnalysisException e ) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL,e.type);
             e.printStackTrace();
         }
     }

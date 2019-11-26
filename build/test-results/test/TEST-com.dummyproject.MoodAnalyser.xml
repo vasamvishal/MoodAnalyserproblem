@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dummyproject.MoodAnalyser" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-11-26T05:40:18" hostname="admin1-LIVA-Z2V" time="0.043">
+<testsuite name="com.dummyproject.MoodAnalyser" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-11-26T05:54:03" hostname="admin1-LIVA-Z2V" time="0.197">
   <properties/>
-  <testcase name="shouldReturn_customException_forNull" classname="com.dummyproject.MoodAnalyser" time="0.021"/>
+  <testcase name="shouldReturn_customException_forNull" classname="com.dummyproject.MoodAnalyser" time="0.14"/>
   <testcase name="shouldReturn_HAPPY_ForHappyMesssage" classname="com.dummyproject.MoodAnalyser" time="0.001"/>
   <testcase name="shouldReturn_SAD_ForSADmessage" classname="com.dummyproject.MoodAnalyser" time="0.0"/>
-  <testcase name="shouldReturn_Happy_forNull" classname="com.dummyproject.MoodAnalyser" time="0.021"/>
+  <testcase name="shouldReturn_Happy_forNull" classname="com.dummyproject.MoodAnalyser" time="0.046"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[com.dummyproject.MoodAnalysisException: Enter a  proper value
 	at com.dummyproject.MoodAnalyserReal.analyseMood(MoodAnalyserReal.java:20)
-	at com.dummyproject.MoodAnalyser.shouldReturn_customException_forNull(MoodAnalyser.java:39)
+	at com.dummyproject.MoodAnalyser.shouldReturn_customException_forNull(MoodAnalyser.java:40)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
