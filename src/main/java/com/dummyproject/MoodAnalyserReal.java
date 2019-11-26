@@ -22,8 +22,8 @@ public class MoodAnalyserReal {
             throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL,"Enter a  proper value");
         }
     }
-    public boolean equals(MoodAnalyserReal another) {
-        if (this.message == another.message)
+    public boolean equals(Object another) {
+        if (another instanceof MoodAnalyserReal )
             return true;
         return false;
     }

@@ -4,14 +4,15 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class MoodAnalyserFactory {
- private String message;
+
+
     public static MoodAnalyserReal creatMoodAnalyser(String message) throws  MoodAnalysisException {
         try {
             Class<?> moodAnalyser= Class.forName("com.dummyproject.MoodAnalyserReal");
             try {
-                Constructor<?> moodConstructor = moodAnalyser.getConstructor(String.class);
+                Constructor<?> moodConstructor = moodAnalyser.getConstructor();
                 try {
-                    Object moodobj = moodConstructor.newInstance(message);
+                    Object moodobj = moodConstructor.newInstance();
                     return (MoodAnalyserReal)moodobj;
                 } catch (InstantiationException e) {
                     e.printStackTrace();

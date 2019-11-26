@@ -44,21 +44,15 @@ public class MoodAnalyser {
             e.printStackTrace();
         }
     }
-    @Test
-    public void shouldReturn_object_fromClass() {
-        try {
-            MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
-            Assert.assertEquals(new MoodAnalyserReal("im in a happy mood"),moodobject);
-        }
-        catch (MoodAnalysisException e){
-            e.printStackTrace();
-        }
 
-    }
+
+
+
+
     @Test
     public void shouldReturn_exception_fromWrongClass() {
         try {
-            MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
+            MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("i am in happy mood");
             String mood = moodobject.analyseMood();
         }
 
@@ -71,7 +65,7 @@ public class MoodAnalyser {
 
     public void shouldReturn_exceptionFor_Wrongconstructorname() {
         try {
-            MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
+            MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("i am in happy mood");
             String mood = moodobject.analyseMood();
 
         }
