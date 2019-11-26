@@ -10,6 +10,8 @@ public class MoodAnalyserReal {
 
     public String analyseMood() throws MoodAnalysisException {
         try {
+            if (message.length()==0)
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_EMPTY,"Enter a value");
             if (message.contains("sad"))
                 return "SAD";
             else
@@ -17,8 +19,12 @@ public class MoodAnalyserReal {
         }
         catch(NullPointerException e)
         {
-
-            (MoodAnalysisException.ExceptionType.ENTERED_NULL,"Enter a  proper value");
+            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL,"Enter a  proper value");
         }
+    }
+    public boolean equals(MoodAnalyserReal another) {
+        if (this.message == another.message)
+            return true;
+        return false;
     }
 }

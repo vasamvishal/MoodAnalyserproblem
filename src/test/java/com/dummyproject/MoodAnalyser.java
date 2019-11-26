@@ -48,18 +48,38 @@ public class MoodAnalyser {
     public void shouldReturn_object_fromClass() {
         try {
             MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
-
-            String mood = moodobject.analyseMood();
-            Assert.assertEquals("HAPPY", mood);
+            Assert.assertEquals(new MoodAnalyserReal("im in a happy mood"),moodobject);
         }
-        catch ( ClassNotFoundException e ) {
-            e.printStackTrace();
-        }
-
-        catch ( MoodAnalysisException e ) {
+        catch (MoodAnalysisException e){
             e.printStackTrace();
         }
 
     }
+    @Test
+    public void shouldReturn_exception_fromWrongClass() {
+        try {
+            MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
+            String mood = moodobject.analyseMood();
+        }
 
+        catch ( MoodAnalysisException e ) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS,e.type);
+            e.printStackTrace();
+        }
+    }
+    @Test
+
+    public void shouldReturn_exceptionFor_Wrongconstructorname() {
+        try {
+            MoodAnalyserReal moodobject = MoodAnalyserFactory.creatMoodAnalyser("im in a happy mood");
+            String mood = moodobject.analyseMood();
+
+        }
+        catch(MoodAnalysisException e ){
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD,e.type);
+
+            e.printStackTrace();
+        }
+
+    }
 }

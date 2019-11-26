@@ -5,9 +5,9 @@ import java.lang.reflect.InvocationTargetException;
 
 public class MoodAnalyserFactory {
  private String message;
-    public static MoodAnalyserReal creatMoodAnalyser(String message) throws ClassNotFoundException {
+    public static MoodAnalyserReal creatMoodAnalyser(String message) throws  MoodAnalysisException {
         try {
-            Class<?> moodAnalyser= Class.forName("MoodAnalyserReal");
+            Class<?> moodAnalyser= Class.forName("com.dummyproject.MoodAnalyserReal");
             try {
                 Constructor<?> moodConstructor = moodAnalyser.getConstructor(String.class);
                 try {
@@ -21,10 +21,10 @@ public class MoodAnalyserFactory {
                     e.printStackTrace();
                 }
             } catch (NoSuchMethodException e) {
-                e.printStackTrace();
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD,"ENTER PROPER METHOD");
             }
         } catch (ClassNotFoundException e) {
-            throw new ClassNotFoundException();
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS,"ENTER PROPER CLASS");
         }
         return null;
     }
