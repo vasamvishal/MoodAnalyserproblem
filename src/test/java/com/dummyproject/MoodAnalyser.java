@@ -35,7 +35,7 @@ public class MoodAnalyser {
     @Test
     public void shouldReturn_customException_forNull(){
 
-            MoodAnalyserReal moodAnalyserReal = new MoodAnalyserReal(null);
+            MoodAnalyserReal moodAnalyserReal = new MoodAnalyserReal("");
             try {
                  moodAnalyserReal.analyseMood();
             }
