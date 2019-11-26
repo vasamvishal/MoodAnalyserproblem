@@ -40,7 +40,7 @@ public class MoodAnalyser {
                  moodAnalyserReal.analyseMood();
             }
         catch( MoodAnalysisException e ) {
-            Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL,e.type);
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_EMPTY,e.type);
             e.printStackTrace();
         }
     }
